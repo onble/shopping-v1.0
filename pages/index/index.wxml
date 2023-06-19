@@ -4,31 +4,25 @@
   <SearchBar></SearchBar>
   <!-- 搜索框结束 -->
 
-  <!-- 轮播图开始 -->
+    <!-- 轮播图开始 -->
     <view>
-     <!--
-         indicator-dots 是否显示面板指示点
-         autoplay:是否自动切换 
-         circular:是否采用衔接滑动
- -->
-      <swiper class="index_swiper" indicator-dots autoplay 	circular>
-        <swiper-item>
+        
+        <swiper class="index_swiper" 	 indicator-dots autoplay 	circular>
+            
+          <swiper-item
+            wx:for="{{swiperList}}"
+            wx:for-item = "swiper"
+            wx:key = "id" 
+          >
+              
           <navigator>
-           <!-- mode="widthFix" 图片自适应 -->
-           <image src="http://localhost:8080//image/swiper/1.jpg" mode="widthFix"></image>
-          </navigator>
-        </swiper-item>
-        <swiper-item>
-          <navigator>
-           <image src="http://localhost:8080//image/swiper/2.jpg" mode="widthFix"></image>
-          </navigator>
-        </swiper-item>
-        <swiper-item>
-          <navigator>
-           <image src="http://localhost:8080//image/swiper/3.jpg" mode="widthFix"></image>
-          </navigator>
-        </swiper-item>
-      </swiper>
+             <!-- 拼接图片地址 -->
+             <image mode="widthFix" src="{{'http://localhost:8080/image/swiper/'+swiper.swiperPic}}"></image> 
+            </navigator>
+          </swiper-item> 
+  
+        </swiper> 
+          
     </view>
   <!-- 轮播图结束 -->
 
