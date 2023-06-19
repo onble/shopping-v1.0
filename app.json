@@ -3,9 +3,10 @@
     "pages/index/index",
     "pages/category/index",
     "pages/cart/index",
-    "pages/my/index"
+    "pages/my/index",
+    "pages/search/index"
   ],
-  
+
 "tabBar": {
   "color": "#999",
    "selectedColor": "#ff5700",
@@ -38,9 +39,9 @@
 },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FF5700",
     "navigationBarTitleText": "抖音商城",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

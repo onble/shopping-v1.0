@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "SearchBar":"/components/SearchBar/SearchBar"
+  },
   "navigationBarTitleText": "抖音商城-首页"
 }
