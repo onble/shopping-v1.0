@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/index",
+    "pages/cart/index",
+    "pages/my/index"
+  ],
+  
+"tabBar": {
+  "list": [{
+    "pagePath": "pages/index/index",
+    "text": "首页",
+    "iconPath": "icons/_home.png",
+    "selectedIconPath": "icons/home.png"
+  },
+  {
+   "pagePath": "pages/category/index",
+   "text": "我的",
+   "iconPath": "icons/_category.png",
+   "selectedIconPath": "icons/category.png"
+ },
+{
+   "pagePath": "pages/cart/index",
+   "text": "购物车",
+   "iconPath": "icons/_cart.png",
+   "selectedIconPath": "icons/cart.png"
+ },
+ {
+   "pagePath": "pages/my/index",
+   "text": "首页",
+   "iconPath": "icons/_my.png",
+   "selectedIconPath": "icons/my.png"
+ } 
+ ]
+}
+,
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "抖音商城",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

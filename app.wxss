@@ -1,0 +1,2 @@
+/* 全局引入iconfont样式 */
+@import "./styles/iconfont.wxss"
