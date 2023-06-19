@@ -17,7 +17,7 @@
               
           <navigator>
              <!-- 拼接图片地址 -->
-             <image mode="widthFix" src="{{'http://localhost:8080/image/swiper/'+swiper.swiperPic}}"></image> 
+             <image mode="widthFix" src="{{baseUrl+'/image/swiper/'+swiper.swiperPic}}"></image> 
             </navigator>
           </swiper-item> 
   
