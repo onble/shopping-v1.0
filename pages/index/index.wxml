@@ -1,22 +1,35 @@
 <!--index.wxml-->
 <view class="container">
- <!-- 首页 -->
- <!-- 
-   text标签：文本标签
-   iconfont:字号 颜色 字体文件
-   incon-XXX:图形
-  -->
- <!-- <text class="iconfont  icon-gouwuche2"></text>
- 测试
- <text class="iconfont  icon-fangdajing"></text>
- <text class="iconfont  icon-shopping"></text>
- <text class="iconfont  icon-shopping-cart"></text>
- <text class="iconfont  icon-shouye"></text>
- <br/>
- 使用组件 -->
- <view>
-    <!-- 搜索框开始 -->
-    <SearchBar></SearchBar>
-    <!-- 搜索框结束 -->
-</view>
+  <!-- 搜索框开始 -->
+  <SearchBar></SearchBar>
+  <!-- 搜索框结束 -->
+
+  <!-- 轮播图开始 -->
+    <view>
+     <!--
+         indicator-dots 是否显示面板指示点
+         autoplay:是否自动切换 
+         circular:是否采用衔接滑动
+ -->
+      <swiper class="index_swiper" indicator-dots autoplay 	circular>
+        <swiper-item>
+          <navigator>
+           <!-- mode="widthFix" 图片自适应 -->
+           <image src="http://localhost:8080//image/swiper/1.jpg" mode="widthFix"></image>
+          </navigator>
+        </swiper-item>
+        <swiper-item>
+          <navigator>
+           <image src="http://localhost:8080//image/swiper/2.jpg" mode="widthFix"></image>
+          </navigator>
+        </swiper-item>
+        <swiper-item>
+          <navigator>
+           <image src="http://localhost:8080//image/swiper/3.jpg" mode="widthFix"></image>
+          </navigator>
+        </swiper-item>
+      </swiper>
+    </view>
+  <!-- 轮播图结束 -->
+
 </view>

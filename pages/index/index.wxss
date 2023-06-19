@@ -2,3 +2,12 @@
 view{
   color:var(--themeColor)
 }
+/* 为轮播图添加样式 */
+.index_swiper {
+  width: 750rpx;
+  height: 325rpx;
+}
+
+.index_swiper  swiper-item image{
+     width: 100%;
+}
