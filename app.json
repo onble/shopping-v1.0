@@ -7,6 +7,9 @@
   ],
   
 "tabBar": {
+  "color": "#999",
+   "selectedColor": "#ff5700",
+   "backgroundColor": "#fafafa",
   "list": [{
     "pagePath": "pages/index/index",
     "text": "首页",
@@ -32,8 +35,7 @@
    "selectedIconPath": "icons/my.png"
  } 
  ]
-}
-,
+},
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

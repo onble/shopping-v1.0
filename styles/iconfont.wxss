@@ -72,3 +72,36 @@
 .icon-sousuo1:before {
   content: "\e605";
 }
+
+
+/* 下面是我的font */
+@font-face {
+  font-family: "iconfont"; /* Project id 4129179 */
+  src: url('//at.alicdn.com/t/c/font_4129179_uji2p2rglo.woff2?t=1687154638573') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4129179_uji2p2rglo.woff?t=1687154638573') format('woff'),
+       url('//at.alicdn.com/t/c/font_4129179_uji2p2rglo.ttf?t=1687154638573') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouye:before {
+  content: "\e619";
+}
+
+.icon-fangdajing:before {
+  content: "\e633";
+}
+
+.icon-shopping:before {
+  content: "\e6cb";
+}
+
+.icon-shopping-cart:before {
+  content: "\e617";
+}

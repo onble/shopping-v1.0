@@ -1,5 +1,15 @@
 <!--index.wxml-->
 <view class="container">
  首页
+ <!-- 
+   text标签：文本标签
+   iconfont:字号 颜色 字体文件
+   incon-XXX:图形
+  -->
  <text class="iconfont  icon-gouwuche2"></text>
+ 测试
+ <text class="iconfont  icon-fangdajing"></text>
+ <text class="iconfont  icon-shopping"></text>
+ <text class="iconfont  icon-shopping-cart"></text>
+ <text class="iconfont  icon-shouye"></text>
 </view>
