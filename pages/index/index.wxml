@@ -26,4 +26,42 @@
     </view>
   <!-- 轮播图结束 -->
 
+  <!-- 商品大类开始 -->
+  <view class="index_bigType">
+    <view class="bigTypeRow">
+      <navigator wx:for="{{bigTypeList_row1}}" wx:for-item="bigType" wx:key="id">
+        <image src="{{baseUrl+'/image/bigType/'+bigType.image}}" mode="widthFix"/>
+      </navigator>
+    </view>
+  </view>
+  <!-- 商品大类结束 -->
+
+  <!-- 商品热卖推荐 开始 -->
+<view class="index_hotProduct">
+    
+    <view class="product_title">
+    热卖推荐
+    </view>
+    
+    <view class="product_list">
+        
+        <view class="product_detail"
+          wx:for="{{hotProductList}}"
+          wx:for-item="hotProduct"
+          wx:key="id"
+        >
+            
+            <navigator>
+                <image mode="widthFix" src="{{baseUrl+'/image/product/'+hotProduct.proPic}}"></image>
+                <view class="product_name">{{hotProduct.name}}</view>
+                <view class="product_price"> ¥ {{hotProduct.price}}</view>
+                <button size="mini" type="warn">立即购买</button>
+            </navigator>
+            
+         </view>
+        
+    </view>
+    
+</view>
+  <!-- 商品推荐结束 -->
 </view>
