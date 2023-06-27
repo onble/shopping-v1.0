@@ -1,12 +1,17 @@
 // pages/category/index.js
+import {getBaseUrl, requestUtil} from '../../utils/requestUtil.js';
 Page({
 
   /**
-   * 页面的初始数据
+   * 1 页面的初始数据
    */
   data: {
-
+    leftMenuList:[], // 左侧菜单数据
+    rightContent:[], // 右侧商品数据
   },
+
+  // 2 接口的全部返回数据，存储到这个空数组中
+  Cates:[],
 
   /**
    * 生命周期函数--监听页面加载
@@ -40,7 +45,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    this.getCates()
   },
 
   /**
@@ -62,5 +67,37 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+
+   /**
+   * 5 定义一个获取后端数据的方法
+   */
+
+  getCates(){
+    requestUtil({
+      url: '/bigType/findCategories',
+      method: "GET"
+      }).then(result=>{
+
+        this.Cates = result.massage;
+        console.log(this.Cates)
+
+        //1 从Cates数组里获取左侧分类数据(大类)及右侧分类数据(小类)
+          //1.1 从数组中获取所有的name属性值存入到leftMenuList数组
+        let leftMenuList=this.Cates.map(v=>v.name)  
+        console.log(leftMenuList)
+
+          //1.2 从数组的第一个元素值里，获取小类集合存入到rightContent里
+        let rightContent=this.Cates[0].smallTypeList;
+        console.log(rightContent)
+
+        //2 把获取的两个数组值赋值给数据源里的同名数组
+        this.setData({
+            leftMenuList,
+            rightContent
+        })
+
+      })
+   }
+
 })

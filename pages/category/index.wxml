@@ -1,2 +1,80 @@
 <!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="cates">
+  <!-- 搜索框开始 -->
+  <SearchBar></SearchBar>
+  <!-- 搜索框结束 -->
+
+  <!-- 内容区开始 -->
+  <view class="cates_container">
+        <!-- 左侧菜单 开始 -->
+        <scroll-view class="left_menu" scroll-y>
+          <view>菜单1</view>
+          <view>菜单2</view>
+          <view>菜单3</view>
+          <view>菜单4</view>
+          <view>菜单5</view>
+          <view>菜单6</view>
+          <view>菜单7</view>
+          <view>菜单8</view>
+          <view>菜单9</view>
+          <view>菜单10</view>
+          <view>菜单11</view>
+          <view>菜单12</view>
+          <view>菜单13</view>
+          <view>菜单14</view>
+          <view>菜单15</view>
+          <view>菜单16</view>
+          <view>菜单17</view>
+          <view>菜单18</view>
+          <view>菜单19</view>
+          <view>菜单20</view>
+          <view>菜单21</view>
+          <view>菜单22</view>
+          <view>菜单23</view>
+          <view>菜单24</view>
+          <view>菜单25</view>
+          <view>菜单26</view>
+          <view>菜单27</view>
+          <view>菜单28</view>
+          <view>菜单29</view>
+          <view>菜单30</view>
+        </scroll-view>
+        <!-- 左侧菜单 结束 -->
+        
+        <!-- 右侧商品数据 开始 -->
+        <scroll-view class="right_container" scroll-y>
+          <view>内容1</view>
+          <view>内容2</view>
+          <view>内容3</view>
+          <view>内容4</view>
+          <view>内容5</view>
+          <view>内容6</view>
+          <view>内容7</view>
+          <view>内容8</view>
+          <view>内容9</view>
+          <view>内容10</view>
+          <view>内容11</view>
+          <view>内容12</view>
+          <view>内容13</view>
+          <view>内容14</view>
+          <view>内容15</view>
+          <view>内容16</view>
+          <view>内容17</view>
+          <view>内容18</view>
+          <view>内容19</view>
+          <view>内容20</view>
+          <view>内容21</view>
+          <view>内容22</view>
+          <view>内容23</view>
+          <view>内容24</view>
+          <view>内容25</view>
+          <view>内容26</view>
+          <view>内容27</view>
+          <view>内容28</view>
+          <view>内容29</view>
+          <view>内容30</view>
+        </scroll-view>
+        <!-- 右侧商品数据 结束 --> 
+    </view>
+      <!-- 内容区结束 -->
+</view>

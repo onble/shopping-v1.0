@@ -1,1 +1,19 @@
 /* pages/category/index.wxss */
+.cates{
+  height: 100%;
+  }
+
+  .cates .cates_container{
+    /* height:~'calc( 100vh - 90 rpx)'; */
+    height: 1000rpx;
+    display: flex;
+ }
+
+.cates .cates_container .left_menu{
+    flex:2;
+    background-color: aqua;
+ }
+.cates .cates_container .right_container{
+  flex:5;
+  background-color: blue;
+}
