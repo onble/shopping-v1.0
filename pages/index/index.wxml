@@ -29,7 +29,8 @@
   <!-- 商品大类开始 -->
   <view class="index_bigType">
     <view class="bigTypeRow">
-      <navigator wx:for="{{bigTypeList_row1}}" wx:for-item="bigType" wx:key="id">
+    <!-- 下面加上v-if来防止提前渲染 参考:https://blog.csdn.net/weixin_46709219/article/details/112148067 -->
+      <navigator wx:if="{{baseUrl}}" wx:for="{{bigTypeList_row1}}" wx:for-item="bigType" wx:key="id">
         <image src="{{baseUrl+'/image/bigType/'+bigType.image}}" mode="widthFix"/>
       </navigator>
     </view>
