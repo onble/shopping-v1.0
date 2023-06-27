@@ -6,6 +6,7 @@ Page({
    * 1 页面的初始数据
    */
   data: {
+    baseUrl:getBaseUrl(),// 定义一个请求路径变量，初始化为空
     leftMenuList:[], // 左侧菜单数据
     rightContent:[], // 右侧商品数据
   },
