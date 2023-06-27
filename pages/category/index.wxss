@@ -11,9 +11,9 @@
 
 .cates .cates_container .left_menu{
     flex:2;
-    background-color: aqua;
+    background-color: #efefef;
  }
 .cates .cates_container .right_container{
   flex:5;
-  background-color: blue;
+  background-color: #ccc;
 }
