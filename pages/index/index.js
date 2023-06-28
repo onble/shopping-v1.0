@@ -47,7 +47,7 @@ Page({
         const bigTypeList_row1 = bigTypeList.filter((item,index)=>{
           return index<10;
         })
-        console.log('bigTypeList_row1',bigTypeList_row1)
+        // console.log('bigTypeList_row1',bigTypeList_row1)
 
         // 将返回到前端的数据，赋值给上面的三个商品大类数组
         this.setData({
@@ -61,11 +61,22 @@ Page({
                 ,method:"GET"}).then(result=>{
         // 1 获取所有商品大类
         const hotProductList = result.message;
-        console.log('hotProductList',hotProductList)
+        // console.log('hotProductList',hotProductList)
         // 将返回到前端的数据，赋值给上面的三个商品大类数组
         this.setData({
              hotProductList,
         })
+    })
+  },
+
+  // 大类点击事件
+  handleTypeJump(e){
+    const {index}=e.currentTarget.dataset;
+    const app=getApp();
+    app.globalData.index=index;
+    // console.log('切换index',index)
+    wx.switchTab({
+      url: '/pages/category/index',
     })
   }
 })

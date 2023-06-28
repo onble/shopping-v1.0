@@ -19,7 +19,7 @@
   },
   {
    "pagePath": "pages/category/index",
-   "text": "我的",
+   "text": "列表",
    "iconPath": "icons/_category.png",
    "selectedIconPath": "icons/category.png"
  },
@@ -31,7 +31,7 @@
  },
  {
    "pagePath": "pages/my/index",
-   "text": "首页",
+   "text": "我的",
    "iconPath": "icons/_my.png",
    "selectedIconPath": "icons/my.png"
  } 

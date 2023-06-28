@@ -9,16 +9,18 @@
         <!-- 左侧菜单 开始 -->
         <scroll-view class="left_menu" scroll-y>
         <view>{{leftMenuList.length}}</view>
-          <view class="menu_item"
+          <view class="menu_item {{index == currentIndex?'active':''}}"
                 wx:for="{{leftMenuList}}"
-                wx:key="*this">
-            {{item}}
+                wx:key="*this"
+                data-index="{{index}}"
+                bindtap="handerMenuItemChange"
+                >{{item}}
           </view>
         </scroll-view>
         <!-- 左侧菜单 结束 -->
         
          <!-- 右侧商品数据 开始 -->
-         <scroll-view class="right_container" scroll-y>
+         <scroll-view class="right_container" scroll-y scroll-top="{{scrollTop}}" >
           <view class="productType"
             wx:for="{{rightContent}}"
             wx:for-item="productType"

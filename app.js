@@ -1,2 +1,8 @@
 // app.js
-App({})
+App({
+  onLaunch() {
+  },
+  globalData: {
+  index:-1
+  }
+})
