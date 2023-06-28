@@ -13,6 +13,7 @@
             wx:for="{{swiperList}}"
             wx:for-item = "swiper"
             wx:key = "id" 
+            wx:if="{{baseUrl}}" 
           >
               
           <navigator>

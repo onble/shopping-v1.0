@@ -11,7 +11,7 @@
         <view>{{leftMenuList.length}}</view>
           <view class="menu_item {{index == currentIndex?'active':''}}"
                 wx:for="{{leftMenuList}}"
-                wx:key="*this"
+                wx:key="index"
                 data-index="{{index}}"
                 bindtap="handerMenuItemChange"
                 >{{item}}
@@ -20,11 +20,11 @@
         <!-- 左侧菜单 结束 -->
         
          <!-- 右侧商品数据 开始 -->
-         <scroll-view class="right_container" scroll-y scroll-top="{{scrollTop}}" >
+         <scroll-view class="right_content" scroll-y scroll-top="{{scrollTop}}" >
           <view class="productType"
             wx:for="{{rightContent}}"
             wx:for-item="productType"
-            wx:key="*this" 
+            wx:key="index" 
             >
             <view class="productType_title">
               {{productType.name}}
@@ -35,8 +35,12 @@
                   wx:key="id"
                   >
                   <image src="{{baseUrl+'/image/product/'+product.proPic}}" mode="widthFix"/>
-                  <view class="product_name">{{product.name}}</view>
-                  <view class="product_price"> ¥ {{product.price}}</view>
+
+                  <view class="right">
+                    <view class="product_name">{{product.name}}</view>
+                    <view class="product_price"> ¥ {{product.price}}</view>
+                  </view>
+                  
                   </navigator>
               </view>
             </view>

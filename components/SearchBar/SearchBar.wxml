@@ -3,8 +3,8 @@
 <!-- 添加渲染标签 -->
 <view class="search_bar">
   <!-- 超链接标签 设定跳转地址  打开方式默认-->
-  <navigator url="pages/search/index" open-type="navigate">
+  <navigator url="pages/search/index" open-type="navigate" class="navigator">
     <!-- 图标标签 -->
-    <icon type="search" size="16"></icon> 搜索
+    <icon type="search" size="16" class="icon"></icon> 搜索
   </navigator>
 </view>

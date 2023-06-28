@@ -5,7 +5,7 @@
   background-color: var(--themeColor);
 }
 
-.search_bar navigator{
+.search_bar .navigator{
   height: 100%;
   display: flex;
   justify-content: center;
@@ -15,6 +15,6 @@
   color: #666;
 }
 
-.search_bar navigator icon{
+.search_bar .navigator .icon{
   padding-right: 5rpx;
 }

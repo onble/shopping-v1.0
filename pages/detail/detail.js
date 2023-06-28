@@ -72,7 +72,7 @@ Page({
   },
 
   // 获取产品信息
-  getProductDetail(id){
+  async  getProductDetail(id){
     const result=await requestUtil({url: "/product/detail",data:{id}}).then(
       (result)=>{
         this.productInfo=result.message;
