@@ -44,7 +44,7 @@ Page({
     this.getCates2(index);
     app.globalData.index=-1; // 重置index
 	  }else{
-      this.getCates()
+      this.getCates() // 这里的逻辑是我完善的
     }
   },
 
