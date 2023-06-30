@@ -5,7 +5,7 @@
     "pages/cart/index",
     "pages/my/index",
     "pages/search/index",
-    "pages/detail/detail"
+    "pages/product_detail/index"
   ],
   "tabBar": {
     "color": "#999",

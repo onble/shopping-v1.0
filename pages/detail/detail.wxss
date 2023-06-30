@@ -1,4 +1,0 @@
-/* pages/detail/detail.wxss */
-.product_swiper swiper{
-	height: 100vw;
-}
