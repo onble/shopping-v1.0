@@ -11,6 +11,9 @@ Page({
     activeIndex: 0, //初值为0
   },
 
+  // 创建一个全局的购物车商品对象
+  productInfo: {},
+
   /**
    *2  生命周期函数--监听页面加载
    * options:属性 ，里面存储请求参数，可以通过对象名.属性名获取请求参数值
@@ -34,6 +37,8 @@ Page({
       url: "/product/detail",
       data: { id }, //携带请求参数
     }).then((result) => {
+      //为购物车商品对象存储当前获取的商品
+      this.productInfo = result.message;
       this.setData({
         productObj: result.message, //获取商品数据存入数据源
       });
@@ -47,5 +52,44 @@ Page({
     this.setData({
       activeIndex,
     });
+  },
+  // 3 单击事件 商品加入购物车
+  handleCarAdd() {
+    // 调用添加购物车方法
+    this.setCartadd()
+
+    //友情提示
+    wx.showToast({
+      title: "加入成功",
+      icon: "success",
+      mask: true, //开启遮罩效果
+    });
+  },
+  //添加购物车方法
+  setCartadd() {
+    //3.1 从浏览器缓存中获取一个商品信息赋值给cart变量。如果缓存中没有数据，就创建一个空数组赋值给cart变量
+    //这样当第一次调用购物车功能时候，就可以创建一个cart变量，用来存存储添加的商品对象
+    //wx.getStorageSync(): 从浏览器缓存中获取指定key里的值
+    let cart = wx.getStorageSync("cart") || [];
+    console.log("cart=" + cart);
+
+    //3.2 判断当前添加到购物车里的商品，是否在购物车已经存在
+    //    如果存在返回商品id,如果不存在没有找到返回-1
+    let index = cart.findIndex((value, index) => {
+      return value.id == this.productInfo.id;
+    });
+
+    // 根据结果返回提示信息
+    if (index == -1) {
+      //不存在
+      cart.push(this.productInfo);
+      this.productInfo.num = 1; //给购物车里商品对象添加一个数量属性，初始值为1
+    } else {
+      //存在
+      cart[index].num++; //给对应索引位置的商品对象的数量属性+1
+    }
+
+    // 把购物车对象添加到缓存中
+    wx.setStorageSync("cart", cart);
   },
 });

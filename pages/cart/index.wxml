@@ -1,2 +1,26 @@
 <!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<!-- 收货地址 开始 -->
+<view class="revice_address_row">
+    <!-- 收货地址按钮  判断如果data数据源中的 address 变量值为空 显示下面的按钮-->
+    <view class="address_btn" wx:if="{{!address}}">
+       <button type="warn" plain bindtap="handleChooseAddress">获取收货地址</button>
+    </view>
+
+     <!-- 如果 address 变量值为不为空 显示收货人、电话、地址-->
+    <view wx:else class="user_info_row">
+        <view class="user_info">
+          <view>收货人：{{address.userName}},{{address.telNumber}}</view>
+          <view>
+              {{address.provinceName+address.cityName+address.countyName+address.detailInfo}}
+          </view>
+        </view>
+
+        <!-- 跟换地址按钮 -->
+        <view class="change_address">
+            <button bindtap="handleChooseAddress" size="mini" type="default" plain>更换地址</button>
+        </view>
+    </view>
+
+</view>
+<!-- 收货地址 结束 -->
+

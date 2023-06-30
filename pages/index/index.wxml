@@ -16,7 +16,7 @@
             wx:if="{{baseUrl}}" 
           >
               
-          <navigator>
+          <navigator url="/pages/product_detail/index?id={{swiper.id}}">
              <!-- 拼接图片地址 -->
              <image mode="widthFix" src="{{baseUrl+'/image/swiper/'+swiper.swiperPic}}"></image> 
             </navigator>
@@ -59,7 +59,7 @@
           wx:key="id"
         >
             
-            <navigator>
+            <navigator url="/pages/product_detail/index?id={{hotProduct.id}}">
                 <image mode="widthFix" src="{{baseUrl+'/image/product/'+hotProduct.proPic}}"></image>
                 <view class="product_name">{{hotProduct.name}}</view>
                 <view class="product_price"> ¥ {{hotProduct.price}}</view>

@@ -84,7 +84,8 @@
     <view>购物车</view>
   </navigator>
 
-  <view class="tool_item btn_cart">
+  <!-- 购物车添加一个单击事件，调用handleCarAdd()函数 -->
+  <view class="tool_item btn_cart" bindtap="handleCarAdd">
     <view>加入购物车</view>
   </view>
 
