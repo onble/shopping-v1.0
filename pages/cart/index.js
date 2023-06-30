@@ -1,9 +1,12 @@
 // pages/cart/index.js
+import { getBaseUrl, requestUtil } from "../../utils/requestUtil.js";
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    baseUrl: getBaseUrl(),
+    cart: [],
     address: {},
   },
 
@@ -21,7 +24,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    
+    console.log("show");
+    // 第一次进入的时候，没有数据，返回的是空字符串''
+    const address = wx.getStorageSync("address");
+    // console.log('设置的addres',address,address=={},address==undefined,address==null,typeof address,address=='')
+    const cart = wx.getStorageSync("cart") || [];
+    this.setData({
+      address,
+      cart,
+    });
   },
 
   /**
@@ -52,7 +63,7 @@ Page({
   handleChooseAddress() {
     wx.chooseAddress({
       success: (result) => {
-        console.log('地址信息',result);
+        // console.log("地址信息", result);
         wx.setStorageSync("address", result);
       },
     });
