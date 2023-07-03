@@ -172,4 +172,25 @@ Page({
       this.setCart(cart);
     }
   },
+  // 点击结算
+  handlePay() {
+    const { address, totalNum } = this.data;
+    if (!address) {
+      wx.showToast({
+        title: "您还没有选择收货地址",
+        icon: "none",
+      });
+      return;
+    }
+    if (totalNum === 0) {
+      wx.showToast({
+        title: "您还没有选购商品",
+        icon: "none",
+      });
+      return;
+    }
+    wx.navigateTo({
+      url: "/pages/pay/index",
+    });
+  },
 });

@@ -56,7 +56,7 @@ Page({
   // 3 单击事件 商品加入购物车
   handleCarAdd() {
     // 调用添加购物车方法
-    this.setCartadd()
+    this.setCartadd();
 
     //友情提示
     wx.showToast({
@@ -92,5 +92,14 @@ Page({
 
     // 把购物车对象添加到缓存中
     wx.setStorageSync("cart", cart);
+  },
+  // 点击 立即购买
+  handleBuy() {
+    //调用上方的添加购物车方法，从缓存中取出购物车对象，把当前商品添加到购物车，在重新更新缓存购物车
+    this.setCartadd();
+    //跳转到购物车页面
+    wx.switchTab({
+      url: "/pages/cart/index",
+    });
   },
 });
