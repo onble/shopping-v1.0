@@ -121,4 +121,21 @@ Page({
     //6 把修改完的cart值设置到缓存中,下次再进到购物车页面，还可以保留购物车数据的状态
     wx.setStorageSync("cart", cart);
   },
+  // 商品全选功能
+  handleItemAllCheck() {
+    // 获取data中的数据
+    //等价于 let car = this.data.cart 和 let allChecked = this.data.allChecked
+    let { cart, allChecked } = this.data;
+
+    // 修改全选按钮的状态值，取反； 选中变为未选中，未选中变为选中
+    allChecked = !allChecked;
+
+    // 循环修改cart数组中每一个商品的状态值，都与全选按钮一致
+    cart.forEach((v) => {
+      v.checked = allChecked;
+    });
+
+    // 修改后的值 填充回data以及缓存中
+    this.setCart(cart);
+  },
 });
