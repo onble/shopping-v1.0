@@ -139,17 +139,37 @@ Page({
     this.setCart(cart);
   },
   // 商品数量的编辑功能
+  // 商品数量的编辑功能
   handleItemNumEdit(e) {
     //e:时间对象可以获取 标签中 data-xxx自定属性的值
     //使用解构语法获取参数（简单）operation,id cart
     const { operation, id } = e.currentTarget.dataset;
     console.log(operation, id);
     let { cart } = this.data;
+
     //根据id查找购物车里对应的商品，返回所在索引，为找到返回-1
     let index = cart.findIndex((v) => v.id === id);
-    //修改当前商品的数量并重新赋值：单击减号-1 单击加号+1
-    cart[index].num += operation;
-    //更新购物车数据，并把新购物车数组加到缓存
-    this.setCart(cart);
+    //判断如果数字框里为1，并且单击的是减1按钮
+    if (cart[index].num === 1 && operation === -1) {
+      //showModal()；模态框函数
+      wx.showModal({
+        //调用弹框，确认是否删除
+        title: "系统提示",
+        content: "您是否要删除？",
+        cancelColor: "cancelColor",
+        success: (res) => {
+          //res.confirm:单击确定按钮
+          if (res.confirm) {
+            cart.splice(index, 1); //在数组中从当前索引位置移除1个的元素
+            this.setCart(cart); //更新cart数组
+          }
+        },
+      });
+    } else {
+      //修改当前商品的数量并重新赋值：单击减号-1 单击加号+1
+      cart[index].num += operation;
+      //更新购物车数据，并把新购物车数组加到缓存
+      this.setCart(cart);
+    }
   },
 });
