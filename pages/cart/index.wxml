@@ -52,9 +52,10 @@
         <view class="goods_price_wrap">
           <view class="goods_price">¥ {{item.price}}</view>
           <view class="cart_num_tool">
-            <view class="num_edit">-</view>
+            <!-- 自定义两个属性变量 id  operation -->
+            <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.id}}" data-operation="{{-1}}"> – </view>
             <view class="goods_num">{{item.num}}</view>
-            <view class="num_edit">+</view>
+            <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.id}}" data-operation="{{1}}"> + </view>
           </view>
         </view>
       </view>
@@ -68,7 +69,7 @@
 
   <!-- 全选 开始 -->
   <view class="all_chk_wrap">
-    <checkbox-group  bindchange="handleItemAllCheck">
+    <checkbox-group bindchange="handleItemAllCheck">
       <checkbox checked="{{allChecked}}"><text decode="true">&nbsp;&nbsp;全选</text></checkbox>
     </checkbox-group>
   </view>

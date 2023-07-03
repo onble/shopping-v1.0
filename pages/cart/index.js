@@ -138,4 +138,18 @@ Page({
     // 修改后的值 填充回data以及缓存中
     this.setCart(cart);
   },
+  // 商品数量的编辑功能
+  handleItemNumEdit(e) {
+    //e:时间对象可以获取 标签中 data-xxx自定属性的值
+    //使用解构语法获取参数（简单）operation,id cart
+    const { operation, id } = e.currentTarget.dataset;
+    console.log(operation, id);
+    let { cart } = this.data;
+    //根据id查找购物车里对应的商品，返回所在索引，为找到返回-1
+    let index = cart.findIndex((v) => v.id === id);
+    //修改当前商品的数量并重新赋值：单击减号-1 单击加号+1
+    cart[index].num += operation;
+    //更新购物车数据，并把新购物车数组加到缓存
+    this.setCart(cart);
+  },
 });
