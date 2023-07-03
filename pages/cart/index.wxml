@@ -26,41 +26,46 @@
 <!-- 购物车清单 开始 -->
 <view class="cart_content">
   <view class="cart_main">
-    <view class="cart_item" wx:for="{{cart}}" wx:key="id">
-      <!-- 复选框 开始 -->
-      <view class="cart_chk_wrap">
-        <!-- checkbox-group：复选框组 ； checkbox：复选框按钮  配套的标签
+    <block wx:if="{{cart.length!==0}}">
+      <view class="cart_item" wx:for="{{cart}}" wx:key="id">
+        <!-- 复选框 开始 -->
+        <view class="cart_chk_wrap">
+          <!-- checkbox-group：复选框组 ； checkbox：复选框按钮  配套的标签
                     data-id:给复选框绑定自定义属性id,用于调用事件函数的时候传递id值
                     bindchange： 状态改变事件，当复选框值发生改变的时候，调用指定函数
         -->
-        <checkbox-group data-id="{{item.id}}" bindchange="handleItemChange">
-          <checkbox checked="{{item.checked}}"></checkbox>
-        </checkbox-group>
-      </view>
-      <!-- 复选框 结束 -->
-      <!-- 商品图片 开始 -->
-      <navigator class="cart_img_wrap" url="/pages/product_detail/index?id={{item.id}}">
-        <image mode="widthFix" src="{{baseUrl+'/image/product/'+item.proPic}}">
-        </image>
-      </navigator>
-      <!-- 商品图片 结束 -->
-      <!-- 商品信息 开始 -->
-      <view class="cart_info_wrap">
-        <navigator url="/pages/product_detail/index?id={{item.id}}">
-          <view class="goods_name">{{item.name}}</view>
+          <checkbox-group data-id="{{item.id}}" bindchange="handleItemChange">
+            <checkbox checked="{{item.checked}}"></checkbox>
+          </checkbox-group>
+        </view>
+        <!-- 复选框 结束 -->
+        <!-- 商品图片 开始 -->
+        <navigator class="cart_img_wrap" url="/pages/product_detail/index?id={{item.id}}">
+          <image mode="widthFix" src="{{baseUrl+'/image/product/'+item.proPic}}">
+          </image>
         </navigator>
-        <view class="goods_price_wrap">
-          <view class="goods_price">¥ {{item.price}}</view>
-          <view class="cart_num_tool">
-            <!-- 自定义两个属性变量 id  operation -->
-            <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.id}}" data-operation="{{-1}}"> – </view>
-            <view class="goods_num">{{item.num}}</view>
-            <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.id}}" data-operation="{{1}}"> + </view>
+        <!-- 商品图片 结束 -->
+        <!-- 商品信息 开始 -->
+        <view class="cart_info_wrap">
+          <navigator url="/pages/product_detail/index?id={{item.id}}">
+            <view class="goods_name">{{item.name}}</view>
+          </navigator>
+          <view class="goods_price_wrap">
+            <view class="goods_price">¥ {{item.price}}</view>
+            <view class="cart_num_tool">
+              <!-- 自定义两个属性变量 id  operation -->
+              <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.id}}" data-operation="{{-1}}"> – </view>
+              <view class="goods_num">{{item.num}}</view>
+              <view class="num_edit" bindtap="handleItemNumEdit" data-id="{{item.id}}" data-operation="{{1}}"> + </view>
+            </view>
           </view>
         </view>
+        <!-- 商品信息 结束 -->
       </view>
-      <!-- 商品信息 结束 -->
-    </view>
+    </block>
+    <block wx:else>
+      <image src="/icons/empty.gif" mode="widthFix" />
+    </block>
   </view>
 </view>
 <!-- 购物车清单 结束 -->
