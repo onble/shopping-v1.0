@@ -71,7 +71,7 @@ Page({
     //这样当第一次调用购物车功能时候，就可以创建一个cart变量，用来存存储添加的商品对象
     //wx.getStorageSync(): 从浏览器缓存中获取指定key里的值
     let cart = wx.getStorageSync("cart") || [];
-    console.log("cart=" + cart);
+    // console.log("cart=" + cart);
 
     //3.2 判断当前添加到购物车里的商品，是否在购物车已经存在
     //    如果存在返回商品id,如果不存在没有找到返回-1
@@ -82,8 +82,9 @@ Page({
     // 根据结果返回提示信息
     if (index == -1) {
       //不存在
-      cart.push(this.productInfo);
       this.productInfo.num = 1; //给购物车里商品对象添加一个数量属性，初始值为1
+      this.productInfo.checked = true; //给购物车里的商品对象添加一个是否选中属性，并赋值为true表示选中
+      cart.push(this.productInfo);
     } else {
       //存在
       cart[index].num++; //给对应索引位置的商品对象的数量属性+1
