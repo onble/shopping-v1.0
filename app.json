@@ -10,7 +10,7 @@
   ],
   "tabBar": {
     "color": "#999",
-    "selectedColor": "#ff5700",
+    "selectedColor": "#FEDFE1",
     "backgroundColor": "#fafafa",
     "list": [
       {
@@ -41,7 +41,7 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FF5700",
+    "navigationBarBackgroundColor": "#b0d5df",
     "navigationBarTitleText": "抖音商城",
     "navigationBarTextStyle": "white"
   },
