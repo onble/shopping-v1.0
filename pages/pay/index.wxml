@@ -52,7 +52,7 @@
   <!-- 总价格 结束 -->
 
   <!-- 结算 开始 -->
-  <view class="order_pay_wrap" bindtap="handlePay">
+  <view class="order_pay_wrap" bindtap="handleOrderPay">
     去付款
   </view>
   <!-- 结算 结束 -->

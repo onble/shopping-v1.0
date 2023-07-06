@@ -3,6 +3,8 @@ App({
   onLaunch() {
   },
   globalData: {
-  index:-1
+  index:-1,
+  userInfo:{},
+  code:''
   }
 })
